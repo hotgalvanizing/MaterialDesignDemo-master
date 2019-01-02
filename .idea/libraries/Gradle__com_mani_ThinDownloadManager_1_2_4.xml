@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mani:ThinDownloadManager-1.2.4">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ThinDownloadManager-1.2.4.aar/cd35f67f43bc9ee0ef47bb0985293e43/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ThinDownloadManager-1.2.4.aar/cd35f67f43bc9ee0ef47bb0985293e43/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mani/ThinDownloadManager/1.2.4/468342e917acf833e2a7fb6ccae5427d44ebd12/ThinDownloadManager-1.2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
