@@ -42,9 +42,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
             Log.i(TAG, "NULL");
-        else {
+        } else {
             Log.i(TAG, "NOT NULL");
         }
 

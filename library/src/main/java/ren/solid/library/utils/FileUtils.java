@@ -219,11 +219,15 @@ public class FileUtils {
      */
     public static File getCacheDir(Context context) {
         Log.i("getCacheDir", "cache sdcard state: " + Environment.getExternalStorageState());
+        //MEDIA_MOUNTED 存储媒体已经挂载，并且挂载点可读/写。
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+
             File cacheDir = context.getExternalCacheDir();
             if (cacheDir != null && (cacheDir.exists() || cacheDir.mkdirs())) {
+
                 Log.i("getCacheDir", "cache dir: " + cacheDir.getAbsolutePath());
                 return cacheDir;
+
             }
         }
 
