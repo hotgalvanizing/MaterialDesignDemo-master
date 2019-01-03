@@ -15,11 +15,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import ren.solid.skinloader.util.L;
 import ren.solid.skinloader.config.SkinConfig;
 import ren.solid.skinloader.listener.ILoaderListener;
 import ren.solid.skinloader.listener.ISkinLoader;
 import ren.solid.skinloader.listener.ISkinUpdate;
+import ren.solid.skinloader.util.L;
 
 /**
  * Created by _SOLID
@@ -124,7 +124,9 @@ public class SkinManager implements ISkinLoader {
 
     @Override
     public void notifySkinUpdate() {
-        if (mSkinObservers == null) return;
+        if (mSkinObservers == null) {
+            return;
+        }
         for (ISkinUpdate observer : mSkinObservers) {
             observer.onThemeUpdate();
         }
@@ -147,6 +149,7 @@ public class SkinManager implements ISkinLoader {
 
         new AsyncTask<String, Void, Resources>() {
 
+            @Override
             protected void onPreExecute() {
                 if (callback != null) {
                     callback.onStart();
@@ -189,15 +192,20 @@ public class SkinManager implements ISkinLoader {
                 }
             }
 
+            @Override
             protected void onPostExecute(Resources result) {
                 mResources = result;
 
                 if (mResources != null) {
-                    if (callback != null) callback.onSuccess();
-                    notifySkinUpdate();
+                    if (callback != null) {
+                        callback.onSuccess();
+                        notifySkinUpdate();
+                    }
                 } else {
                     isDefaultSkin = true;
-                    if (callback != null) callback.onFailed();
+                    if (callback != null) {
+                        callback.onFailed();
+                    }
                 }
             }
 
